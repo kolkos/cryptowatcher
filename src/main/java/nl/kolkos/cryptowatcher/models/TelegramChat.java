@@ -1,4 +1,4 @@
-package nl.kolkos.cryptowatcher.Models;
+package nl.kolkos.cryptowatcher.models;
 
 import lombok.Data;
 
