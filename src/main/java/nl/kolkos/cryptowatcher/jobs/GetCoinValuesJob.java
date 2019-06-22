@@ -19,12 +19,14 @@ public class GetCoinValuesJob {
         this.coinService = coinService;
     }
 
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(fixedDelay = 10000 * 60 * 60)
     public void getCoinValues() {
         LOGGER.info("Registering coins");
 
         Coin btc = new Coin("Bitcoin", "btc");
         coinService.save(btc);
+
+
 
     }
 
