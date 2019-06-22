@@ -1,11 +1,13 @@
 package nl.kolkos.cryptowatcher.entities;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class Wallet {
 
     @Id

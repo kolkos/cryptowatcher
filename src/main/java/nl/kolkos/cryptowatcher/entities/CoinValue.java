@@ -1,12 +1,14 @@
 package nl.kolkos.cryptowatcher.entities;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Data
 @Entity
+@NoArgsConstructor
 public class CoinValue {
     @Id
     @GeneratedValue
