@@ -41,7 +41,7 @@ public class Receiver {
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 
-        String response = restClient.doRestRequest(headers, HttpMethod.GET, "https://api.blockcypheer.com/v1/btc/main/addrs/1DEP8i3QJCsomS4BSMY2RpU1upv62aGvhD/balance");
+        String response = restClient.doRestRequest(headers, HttpMethod.GET, "https://api.blockcypher.com/v1/btc/main/addrs/1DEP8i3QJCsomS4BSMY2RpU1upv62aGvhD/balance");
         if(response != null){
             LOGGER.info(response);
         }

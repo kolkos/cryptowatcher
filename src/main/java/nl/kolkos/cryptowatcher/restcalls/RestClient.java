@@ -9,7 +9,6 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
@@ -27,8 +26,6 @@ public class RestClient {
                 .errorHandler(restTemplateResponseErrorHandler)
                 .build();
     }
-
-
 
     public String doRestRequest(HttpHeaders httpHeaders, HttpMethod httpMethod, String url) {
         HttpEntity<String> entity = new HttpEntity<String>(httpHeaders);
