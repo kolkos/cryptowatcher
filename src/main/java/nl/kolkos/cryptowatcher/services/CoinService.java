@@ -13,12 +13,8 @@ import java.util.Optional;
 public class CoinService {
     private final static Logger LOGGER = LoggerFactory.getLogger(CoinService.class);
 
-    private CoinRepository coinRepository;
-
     @Autowired
-    public CoinService(CoinRepository coinRepository) {
-        this.coinRepository = coinRepository;
-    }
+    private CoinRepository coinRepository;
 
     public Coin save(Coin coin) {
         Optional<Coin> coinInDatabase = coinRepository.findBySymbol(coin.getSymbol());

@@ -12,12 +12,8 @@ import org.springframework.stereotype.Component;
 public class GetCoinValuesJob {
     private final static Logger LOGGER = LoggerFactory.getLogger(GetCoinValuesJob.class);
 
-    private CoinService coinService;
-
     @Autowired
-    public GetCoinValuesJob(CoinService coinService) {
-        this.coinService = coinService;
-    }
+    private CoinService coinService;
 
     @Scheduled(fixedDelay = 10000 * 60 * 60)
     public void getCoinValues() {
@@ -28,6 +24,10 @@ public class GetCoinValuesJob {
 
 
 
+    }
+
+    private final String getUrl() {
+        return "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert=EUR";
     }
 
 }

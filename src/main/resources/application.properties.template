@@ -23,3 +23,5 @@ spring.jpa.hibernate.ddl-auto=create-drop
 # Allows Hibernate to generate SQL optimized for a particular DBMS
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
 
+coinmarketcap.api-token = {API Token Here}
+coinmarketcap.convert-to-currency = {Convert to currency f.e. EUR}
