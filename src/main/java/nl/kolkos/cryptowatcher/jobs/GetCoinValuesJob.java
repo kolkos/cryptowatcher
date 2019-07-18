@@ -15,16 +15,6 @@ public class GetCoinValuesJob {
     @Autowired
     private CoinService coinService;
 
-    @Scheduled(fixedDelay = 10000 * 60 * 60)
-    public void getCoinValues() {
-        LOGGER.info("Registering coins");
-
-        Coin btc = new Coin("Bitcoin", "btc");
-        coinService.save(btc);
-
-
-
-    }
 
     private final String getUrl() {
         return "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert=EUR";

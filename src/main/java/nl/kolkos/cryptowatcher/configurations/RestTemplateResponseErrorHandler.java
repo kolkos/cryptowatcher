@@ -1,10 +1,8 @@
 package nl.kolkos.cryptowatcher.configurations;
 
 
-import nl.kolkos.cryptowatcher.receivers.Receiver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
@@ -26,7 +24,7 @@ public class RestTemplateResponseErrorHandler implements ResponseErrorHandler {
     public RestTemplateResponseErrorHandler(@Value("${good-status}") String goodStatus) {
         acceptableStatus = Arrays.stream(goodStatus.split(","))
                 .map(HttpStatus::valueOf)
-                .collect(Collectors.toList()) ;
+                .collect(Collectors.toList());
     }
 
     @Override
