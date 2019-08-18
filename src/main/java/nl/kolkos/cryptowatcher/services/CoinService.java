@@ -17,8 +17,12 @@ public class CoinService {
     private CoinRepository coinRepository;
 
     public Coin save(Coin coin) {
-        Optional<Coin> coinInDatabase = coinRepository.findBySymbol(coin.getSymbol());
+        Optional<Coin> coinInDatabase = this.findCoinBySymbol(coin.getSymbol());
         return coinInDatabase.orElseGet(() -> coinRepository.save(coin));
+    }
+
+    public Optional<Coin> findCoinBySymbol(String symbol) {
+        return coinRepository.findBySymbol(symbol);
     }
 
 

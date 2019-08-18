@@ -11,9 +11,8 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 public class Coin {
+
     @Id
-    @GeneratedValue
-    private long id;
     private String name;
     private String symbol;
 
