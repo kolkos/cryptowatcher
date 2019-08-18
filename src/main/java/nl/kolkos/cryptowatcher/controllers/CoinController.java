@@ -29,7 +29,7 @@ public class CoinController {
         Coin coin = new Coin(coinName, symbol);
         coin = coinService.save(coin);
 
-        String response = String.format("Registered coin: %s", coin.toString());
+        String response = coin.toString();
         LOGGER.info(response);
 
         return response;

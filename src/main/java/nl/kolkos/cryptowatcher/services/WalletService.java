@@ -1,5 +1,6 @@
 package nl.kolkos.cryptowatcher.services;
 
+import nl.kolkos.cryptowatcher.entities.Wallet;
 import nl.kolkos.cryptowatcher.repositories.WalletRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,4 +17,9 @@ public class WalletService {
     public WalletService(WalletRepository walletRepository) {
         this.walletRepository = walletRepository;
     }
+
+    public Wallet save(Wallet wallet) {
+        return walletRepository.save(wallet);
+    }
+
 }

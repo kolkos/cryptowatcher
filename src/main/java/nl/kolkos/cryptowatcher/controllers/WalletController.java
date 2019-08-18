@@ -1,6 +1,7 @@
 package nl.kolkos.cryptowatcher.controllers;
 
 import nl.kolkos.cryptowatcher.entities.Coin;
+import nl.kolkos.cryptowatcher.entities.Wallet;
 import nl.kolkos.cryptowatcher.services.CoinService;
 import nl.kolkos.cryptowatcher.services.WalletService;
 import org.slf4j.Logger;
@@ -35,11 +36,11 @@ public class WalletController {
         // first find the coin
         Coin coin = coinService.findCoinBySymbol(coinSymbol).orElseThrow(() -> new RuntimeException("Could not find coin " + coinSymbol));
 
+        Wallet wallet = new Wallet(address, String.format("%s wallet", coin.getName()), coin);
 
+        walletService.save(wallet);
+        LOGGER.info(wallet.toString());
 
-        String response = String.format("Registered wallet: %s", "xx");
-        LOGGER.info(response);
-
-        return response;
+        return wallet.toString();
     }
 }

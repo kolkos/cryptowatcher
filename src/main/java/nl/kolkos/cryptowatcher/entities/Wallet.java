@@ -21,5 +21,10 @@ public class Wallet {
     @JoinColumn(name = "coin_id")
     private Coin coin;
 
+    public Wallet(String address, String description, Coin coin) {
+        this.address = address;
+        this.description = description;
+        this.coin = coin;
+    }
 
 }
