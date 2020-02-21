@@ -21,6 +21,10 @@ public class CoinValue {
     private Date requestDate;
     private double value;
 
+    @ManyToOne(fetch= FetchType.EAGER)
+    @JoinColumn(name = "currency_id")
+    private Currency currency;
+
     @PrePersist
     void createdAt() {
         this.requestDate = new Date();
